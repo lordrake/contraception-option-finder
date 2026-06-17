@@ -39,9 +39,11 @@ As a visitor, I want language-specific routes that follow predictable URL rules,
 
 ## Retro
 
+- Date: 2026-06-17
 - Reusable lessons: Static locale routing can stay simple with custom utilities while content remains file-backed.
-- Conventions or agent assets updated: None.
-- Follow-up tasks: TASK-003 should replace placeholder route copy with schema-validated JSON content.
+- Conventions or agent assets updated: Added a locale routing convention to `.project-workflow/guidance.md`.
+- Follow-up tasks: Revisit document-level `<html lang>` when locale-specific layouts or metadata are introduced.
+- Missed in-scope work: None identified.
 
 ## Notes
 
