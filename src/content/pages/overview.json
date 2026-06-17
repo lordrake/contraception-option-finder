@@ -1,0 +1,35 @@
+{
+  "id": "page-overview",
+  "contentType": "StandardPage",
+  "slug": "overview",
+  "eyebrow": {
+    "en": "Overview",
+    "it": "Panoramica"
+  },
+  "title": {
+    "en": "Contraception support overview",
+    "it": "Panoramica del supporto per la contraccezione"
+  },
+  "description": {
+    "en": "Review common next steps, compare information calmly, and ask follow-up questions using accessible page controls.",
+    "it": "Rivedi i prossimi passi, confronta le informazioni con calma e invia domande usando controlli accessibili."
+  },
+  "summary": {
+    "en": "Use this starting point to decide what to read next or to prepare questions for a healthcare professional.",
+    "it": "Usa questo punto di partenza per decidere cosa leggere dopo o per preparare domande per un professionista sanitario."
+  },
+  "blocks": [
+    {
+      "id": "block-overview-intro",
+      "contentType": "HeroBlock",
+      "heading": {
+        "en": "Clear choices start with clear information",
+        "it": "Scelte chiare iniziano da informazioni chiare"
+      },
+      "body": {
+        "en": "The overview keeps important actions close together while preserving semantic HTML.",
+        "it": "La panoramica mantiene vicine le azioni importanti e conserva HTML semantico."
+      }
+    }
+  ]
+}

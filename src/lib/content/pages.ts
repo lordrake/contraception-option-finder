@@ -1,6 +1,7 @@
 import aboutPage from "../../content/pages/about.json";
 import examplePage from "../../content/pages/example.json";
 import homePage from "../../content/pages/home.json";
+import overviewPage from "../../content/pages/overview.json";
 import { defaultLocale, type Locale } from "../i18n/locales";
 import { routeSlugs, type RouteSlug } from "../i18n/routing";
 import {
@@ -15,7 +16,8 @@ type OptionalStringPolicy = "fallback-to-default" | "omit";
 const rawPagesBySlug = {
   "": homePage,
   about: aboutPage,
-  example: examplePage
+  example: examplePage,
+  overview: overviewPage
 } satisfies Record<RouteSlug, unknown>;
 
 const pagesBySlug = routeSlugs.reduce(

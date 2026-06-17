@@ -5,7 +5,7 @@ import {
   type Locale
 } from "./locales";
 
-export const routeSlugs = ["", "example", "about"] as const;
+export const routeSlugs = ["", "overview", "example", "about"] as const;
 
 export type RouteSlug = (typeof routeSlugs)[number];
 

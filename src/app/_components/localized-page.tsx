@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { PrimitiveOverviewPage } from "./primitive-overview-page";
+import { AppLink, Heading, Paragraph } from "@/components/primitives";
 import { getPageContent } from "@/lib/content/pages";
 import { getTranslations } from "@/lib/content/translations";
 import type { TranslationKey } from "@/lib/content/schemas";
@@ -13,12 +14,17 @@ type LocalizedPageProps = {
 const routeLabelKeys = {
   "": "routes.home",
   about: "routes.about",
-  example: "routes.example"
+  example: "routes.example",
+  overview: "routes.overview"
 } satisfies Record<RouteSlug, TranslationKey>;
 
 export function LocalizedPage({ locale, slug }: LocalizedPageProps) {
   const page = getPageContent(slug, locale);
   const translations = getTranslations(locale);
+
+  if (slug === "overview") {
+    return <PrimitiveOverviewPage locale={locale} page={page} />;
+  }
 
   return (
     <main
@@ -30,49 +36,49 @@ export function LocalizedPage({ locale, slug }: LocalizedPageProps) {
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <div>
             {page.eyebrow ? (
-              <p className="mb-3 text-sm font-semibold uppercase text-teal-700">
+              <Paragraph className="mb-3 text-sm font-semibold uppercase text-teal-700">
                 {page.eyebrow}
-              </p>
+              </Paragraph>
             ) : null}
-            <h1 id="page-title" className="max-w-3xl text-4xl font-bold text-slate-950">
+            <Heading id="page-title" level={1}>
               {page.title}
-            </h1>
+            </Heading>
           </div>
 
           <nav aria-label={translations["language.label"]} className="flex flex-wrap gap-2">
             {locales.map((availableLocale) => (
-              <Link
+              <AppLink
                 aria-current={availableLocale === locale ? "true" : undefined}
-                className="rounded-md border border-teal-700 px-3 py-2 text-sm font-semibold text-teal-800 hover:bg-teal-50"
                 href={getLocalizedPath(availableLocale, slug)}
                 key={availableLocale}
+                variant="secondary"
               >
                 {localeLabels[availableLocale]}
-              </Link>
+              </AppLink>
             ))}
           </nav>
         </div>
 
-        <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-700">
+        <Paragraph className="mt-4 text-lg leading-8">
           {page.description}
-        </p>
+        </Paragraph>
 
         {page.summary ? (
-          <p className="mt-4 max-w-2xl leading-7 text-slate-700">
+          <Paragraph className="mt-4">
             {page.summary}
-          </p>
+          </Paragraph>
         ) : null}
 
         <nav aria-label={translations["routes.label"]} className="mt-8 flex flex-wrap gap-3">
           {routeSlugs.map((routeSlug) => (
-            <Link
+            <AppLink
               aria-current={routeSlug === slug ? "page" : undefined}
-              className="rounded-md bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-800"
               href={getLocalizedPath(locale, routeSlug)}
               key={routeSlug}
+              variant="button"
             >
               {translations[routeLabelKeys[routeSlug]]}
-            </Link>
+            </AppLink>
           ))}
         </nav>
       </section>

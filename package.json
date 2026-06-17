@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "content:validate": "tsx src/lib/content/validate-content.ts",
+    "primitives:validate": "tsx src/components/primitives/validate-primitives.tsx",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
