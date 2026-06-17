@@ -1,4 +1,5 @@
 import { Heading, Paragraph } from "./typography";
+import { getPageContent } from "../../lib/content/pages";
 
 const meta = {
   title: "Primitives/Typography",
@@ -33,6 +34,30 @@ export function BodyCopy() {
       <Paragraph tone="muted">
         Muted copy keeps supporting information available without lowering contrast below AA expectations.
       </Paragraph>
+    </div>
+  );
+}
+
+export function LocalizedContent() {
+  const englishPage = getPageContent("about", "en");
+  const italianPage = getPageContent("about", "it");
+
+  return (
+    <div className="grid gap-6 md:grid-cols-2">
+      {[englishPage, italianPage].map((page) => (
+        <section
+          aria-labelledby={`localized-${page.locale}`}
+          className="space-y-3 rounded-lg border border-slate-200 bg-white p-5"
+          key={page.locale}
+          lang={page.locale}
+        >
+          <Paragraph tone="muted">{page.eyebrow}</Paragraph>
+          <Heading id={`localized-${page.locale}`} level={2} size="md">
+            {page.title}
+          </Heading>
+          <Paragraph>{page.description}</Paragraph>
+        </section>
+      ))}
     </div>
   );
 }

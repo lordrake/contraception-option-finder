@@ -10,4 +10,4 @@
 | TASK-006 | CMS-style block architecture | Proposed | Task | AC6 | `tasks/EPIC-001-Next-Js-Cms-Foundation/TASK-006-Block-Architecture/IMPLEMENTATION.md` |  | Covers AC6; future Optimizely mapping |
 | TASK-007 | Accessibility validation workflow | Proposed | Task | AC7 | `tasks/EPIC-001-Next-Js-Cms-Foundation/TASK-007-Accessibility-Validation/IMPLEMENTATION.md` |  | Covers AC7; WCAG 2.2 AA and EN 301 549 |
 | TASK-008 | Design baseline inspired by healthdirect | Proposed | Task | AC8 | `tasks/EPIC-001-Next-Js-Cms-Foundation/TASK-008-Design-Baseline/IMPLEMENTATION.md` |  | Covers AC8; inspiration only, no brand copy |
-| TASK-009 | Storybook component catalogue | Proposed | Task | AC9 | `tasks/EPIC-001-Next-Js-Cms-Foundation/TASK-009-Storybook-Component-Catalogue/IMPLEMENTATION.md` |  | Covers AC9; all primitives and blocks visible |
+| TASK-009 | Storybook component catalogue | In Progress | Task | AC9 | `tasks/EPIC-001-Next-Js-Cms-Foundation/TASK-009-Storybook-Component-Catalogue/IMPLEMENTATION.md` |  | Covers AC9; all primitives and blocks visible |
