@@ -42,6 +42,7 @@ export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> &
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> & {
   error?: ReactNode;
   hint?: ReactNode;
+  id: string;
   invalid?: boolean;
   label: ReactNode;
 };

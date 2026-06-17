@@ -30,7 +30,7 @@ export function AppLink({
   ...props
 }: AppLinkProps) {
   const resolvedTarget = external ? target ?? "_blank" : target;
-  const resolvedRel = external ? rel ?? "noreferrer" : rel;
+  const resolvedRel = external ? rel ?? "noopener noreferrer" : rel;
 
   return (
     <Link
