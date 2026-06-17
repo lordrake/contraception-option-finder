@@ -29,9 +29,13 @@ As a visitor, I want language-specific routes that follow predictable URL rules,
 
 ## QA & Code Review
 
-- Verdict: Pending QA review; implementation validation passed.
-- Evidence: `npm run lint`, `npm run typecheck`, `npm run build`, and representative localhost HEAD route checks passed.
-- Findings: None identified during implementation validation.
+- Date: 2026-06-17
+- Reviewed areas: locale constants, route matching helpers, static params, English unprefixed routes, Italian `/it` routes, shared slug preservation, locale switch links, unsupported locale-like 404 behavior, not-found source, and static generation output.
+- Validation evidence: `npm run content:validate`, `npm run lint`, `npm run typecheck`, and `npm run build` passed. Production build lists `/`, `/example`, `/about`, `/it`, `/it/example`, and `/it/about` as static or SSG routes. Localhost HEAD checks confirmed `/`, `/example`, `/about`, `/it`, `/it/example`, and `/it/about` return `200`; `/fr` and `/en/example` return `404`.
+- AC coverage: AC1 is covered by the custom locale utilities, default-locale unprefixed routing, Italian prefixed routing, shared slug static params, locale switch URL generation, and unsupported locale-like route rejection.
+- Findings: None blocking.
+- Follow-ups: Root layout still renders `<html lang="en">` for all routes while Italian pages mark the localized content region with `lang="it"` on `<main>`. Revisit document-level locale metadata when locale-specific layouts or metadata are introduced.
+- Verdict: Pass with follow-ups.
 
 ## Retro
 
