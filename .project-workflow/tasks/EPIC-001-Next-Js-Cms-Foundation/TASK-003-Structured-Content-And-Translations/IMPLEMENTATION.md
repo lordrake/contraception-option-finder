@@ -37,9 +37,11 @@ As a content maintainer, I want schema-validated JSON content files, so that pag
 
 ## Retro
 
+- Date: 2026-06-17
 - Reusable lessons: Keep locale-aware content loading separate from routing so static route generation stays predictable while the content source can later move behind a CMS adapter.
-- Conventions or agent assets updated: None.
+- Conventions or agent assets updated: Added a content convention to `.project-workflow/guidance.md`.
 - Follow-up tasks: TASK-006 should consume the validated block records through a typed block renderer instead of introducing a second block data shape.
+- Missed in-scope work: None identified.
 
 ## Notes
 
