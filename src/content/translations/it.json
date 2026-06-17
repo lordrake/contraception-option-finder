@@ -1,0 +1,10 @@
+{
+  "locale": "it",
+  "messages": {
+    "language.label": "Lingua",
+    "routes.label": "Rotte condivise",
+    "routes.home": "Home",
+    "routes.example": "Esempio",
+    "routes.about": "Informazioni"
+  }
+}

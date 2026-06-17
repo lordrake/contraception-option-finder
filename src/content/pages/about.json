@@ -1,0 +1,31 @@
+{
+  "id": "page-about",
+  "contentType": "StandardPage",
+  "slug": "about",
+  "eyebrow": {
+    "en": "About",
+    "it": "Informazioni"
+  },
+  "title": {
+    "en": "About this foundation",
+    "it": "Informazioni su questa base"
+  },
+  "description": {
+    "en": "This page is loaded from schema-validated JSON so future CMS content can map to the same page model.",
+    "it": "Questa pagina viene caricata da JSON validato con schema, cosi i contenuti CMS futuri potranno usare lo stesso modello."
+  },
+  "summary": {
+    "en": "Stable identifiers and content type names are included to keep the content layer ready for an Optimizely mapping.",
+    "it": "Identificatori stabili e nomi dei tipi di contenuto aiutano a preparare il livello contenuti per una futura mappatura Optimizely."
+  },
+  "blocks": [
+    {
+      "id": "block-about-intro",
+      "contentType": "RichTextBlock",
+      "body": {
+        "en": "Structured files are the source of truth for the first implementation phase.",
+        "it": "I file strutturati sono la fonte principale per la prima fase di implementazione."
+      }
+    }
+  ]
+}

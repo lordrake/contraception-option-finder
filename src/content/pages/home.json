@@ -1,0 +1,35 @@
+{
+  "id": "page-home",
+  "contentType": "StandardPage",
+  "slug": "",
+  "eyebrow": {
+    "en": "Foundation",
+    "it": "Fondazione"
+  },
+  "title": {
+    "en": "Contraception Option Finder",
+    "it": "Contraception Option Finder"
+  },
+  "description": {
+    "en": "A static-first Next.js foundation for localized, accessible, block-based healthcare content.",
+    "it": "Una base Next.js statica per contenuti sanitari localizzati, accessibili e basati su blocchi."
+  },
+  "summary": {
+    "en": "Content and translations now come from structured files, with validation before pages are rendered.",
+    "it": "Contenuti e traduzioni ora provengono da file strutturati, con validazione prima del rendering delle pagine."
+  },
+  "blocks": [
+    {
+      "id": "block-home-hero",
+      "contentType": "HeroBlock",
+      "heading": {
+        "en": "Clear content, ready for CMS integration",
+        "it": "Contenuti chiari, pronti per l'integrazione CMS"
+      },
+      "body": {
+        "en": "The current source is JSON, but records use stable identifiers and CMS-style content type names.",
+        "it": "La fonte attuale e JSON, ma i record usano identificatori stabili e nomi dei tipi di contenuto in stile CMS."
+      }
+    }
+  ]
+}

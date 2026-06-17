@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { getPageContent } from "@/lib/content/pages";
+import { getTranslations } from "@/lib/content/translations";
+import type { TranslationKey } from "@/lib/content/schemas";
 import { localeLabels, locales, type Locale } from "@/lib/i18n/locales";
-import { routeCopy } from "@/lib/i18n/route-copy";
 import { getLocalizedPath, routeSlugs, type RouteSlug } from "@/lib/i18n/routing";
 
 type LocalizedPageProps = {
@@ -8,8 +10,15 @@ type LocalizedPageProps = {
   slug: RouteSlug;
 };
 
+const routeLabelKeys = {
+  "": "routes.home",
+  about: "routes.about",
+  example: "routes.example"
+} satisfies Record<RouteSlug, TranslationKey>;
+
 export function LocalizedPage({ locale, slug }: LocalizedPageProps) {
-  const copy = routeCopy[locale][slug];
+  const page = getPageContent(slug, locale);
+  const translations = getTranslations(locale);
 
   return (
     <main
@@ -20,15 +29,17 @@ export function LocalizedPage({ locale, slug }: LocalizedPageProps) {
       <section className="rounded-lg bg-white p-8 shadow-sm ring-1 ring-slate-200">
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase text-teal-700">
-              {copy.eyebrow}
-            </p>
+            {page.eyebrow ? (
+              <p className="mb-3 text-sm font-semibold uppercase text-teal-700">
+                {page.eyebrow}
+              </p>
+            ) : null}
             <h1 id="page-title" className="max-w-3xl text-4xl font-bold text-slate-950">
-              {copy.title}
+              {page.title}
             </h1>
           </div>
 
-          <nav aria-label="Language" className="flex flex-wrap gap-2">
+          <nav aria-label={translations["language.label"]} className="flex flex-wrap gap-2">
             {locales.map((availableLocale) => (
               <Link
                 aria-current={availableLocale === locale ? "true" : undefined}
@@ -43,10 +54,16 @@ export function LocalizedPage({ locale, slug }: LocalizedPageProps) {
         </div>
 
         <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-700">
-          {copy.description}
+          {page.description}
         </p>
 
-        <nav aria-label="Shared routes" className="mt-8 flex flex-wrap gap-3">
+        {page.summary ? (
+          <p className="mt-4 max-w-2xl leading-7 text-slate-700">
+            {page.summary}
+          </p>
+        ) : null}
+
+        <nav aria-label={translations["routes.label"]} className="mt-8 flex flex-wrap gap-3">
           {routeSlugs.map((routeSlug) => (
             <Link
               aria-current={routeSlug === slug ? "page" : undefined}
@@ -54,7 +71,7 @@ export function LocalizedPage({ locale, slug }: LocalizedPageProps) {
               href={getLocalizedPath(locale, routeSlug)}
               key={routeSlug}
             >
-              {routeSlug === "" ? "Home" : routeSlug}
+              {translations[routeLabelKeys[routeSlug]]}
             </Link>
           ))}
         </nav>

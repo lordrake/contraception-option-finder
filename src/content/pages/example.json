@@ -1,0 +1,32 @@
+{
+  "id": "page-example",
+  "contentType": "StandardPage",
+  "slug": "example",
+  "eyebrow": {
+    "en": "Example",
+    "it": "Esempio"
+  },
+  "title": {
+    "en": "Example structured page",
+    "it": "Pagina strutturata di esempio"
+  },
+  "description": {
+    "en": "This route demonstrates shared slugs with locale-specific page content loaded from project files.",
+    "it": "Questa rotta mostra slug condivisi con contenuto localizzato caricato dai file del progetto."
+  },
+  "summary": {
+    "en": "The same page record can render in English or Italian without changing the URL slug.",
+    "it": "Lo stesso record di pagina puo essere mostrato in inglese o italiano senza cambiare lo slug dell'URL."
+  },
+  "blocks": [
+    {
+      "id": "block-example-cta",
+      "contentType": "CallToActionBlock",
+      "label": {
+        "en": "Review the foundation",
+        "it": "Rivedi la base"
+      },
+      "href": "/about"
+    }
+  ]
+}
